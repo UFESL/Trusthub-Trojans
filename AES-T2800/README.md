@@ -1,0 +1,18 @@
+The Trojan trigger is dependent on a 4-bit asynchronous counter, which is in turn contingent on a 4-bit synchronous counter (both inserted into the AES-128 block cipher). After each successive encryption, the synchronous counter is increased by 1. The asynchronous counter is also incremented if the following conditions are fulfilled:
+
+1. The fourth bit of the synchronous counter is high, and 
+2. Two predefined signals (s5[113] and s7[127]) within the aes_128 module are active.
+
+The Trojan is active when the fourth bit of the asynchronous counter is high. When triggered, the Trojan attacks encryption by flipping the least significant bit of the existing encrypted output.
+
+<br />
+
+## Contributed By
+
+**Laura Chang**<br />
+University of Florida
+
+\-
+
+**Aruna Jayasena**<br />
+University of Florida
